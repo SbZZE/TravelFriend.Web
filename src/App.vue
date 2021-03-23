@@ -5,6 +5,9 @@
     </el-header>
 
   </el-container>
+  <!-- <transition name="fade">
+    <router-view></router-view>
+  </transition> -->
 </template>
 
 <script>
