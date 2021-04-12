@@ -2,7 +2,7 @@
   <div class="container" :class="{ 'sign-up-mode': signUpMode }">
     <!-- form表单容器 -->
     <div class="forms-container">
-      <div class="sigin-sigup">
+      <div class="signin-signup">
         <!-- 登陆 -->
         <LoginForm :loginUser="loginUser" :rules="rules" />
         
@@ -40,7 +40,7 @@
 import { ref, getCurrentInstance } from "vue";
 import { loginUser, rules } from "@/utils/loginValidators";
 import { registerUser, registerRules } from "@/utils/registerValidators";
-import LoginForm from '@/components/LoginForm.vue';
+import LoginForm from '@/components/LoginForm';
 import RegisterForm from "@/components/RegisterForm.vue";
 
 export default {
@@ -79,7 +79,7 @@ export default {
   left: 0;
 }
 
-.sigin-sigup {
+.signin-signup {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -403,19 +403,6 @@ form.sign-in-form {
 form.sign-up-form {
   opacity: 0;
   z-index: 1;
-}
-
-/* register */
-.registerForm {
-  margin-top: 20px;
-  background-color: #fff;
-  padding: 20px 40px 20px 20px;
-  border-radius: 5px;
-  box-shadow: 0px 5px 10px #cccc;
-}
-
-.submit-btn {
-  width: 100%;
 }
 
 </style>

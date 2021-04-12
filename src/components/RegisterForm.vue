@@ -78,5 +78,16 @@ export default {
 };
 </script>
 <style scoped>
+/* register */
+.registerForm {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px 40px 20px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px #cccc;
+}
 
+.submit-btn {
+  width: 100%;
+}
 </style>
