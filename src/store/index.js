@@ -1,19 +1,12 @@
-import { createApp } from 'vue'
-//import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
 
-createApp.use(Vuex)
-
-export default new Vuex.Store({
+export default createStore({
   state: {
-    storeInfo: {}
   },
   mutations: {
-    setStoreInfo(state, obj) {
-      state.storeInfo = obj
-    }
   },
   actions: {
-
+  },
+  modules: {
   }
 })

@@ -1,26 +1,15 @@
 <template>
-  <el-container>
-    <el-header>
-      <Header/>
-    </el-header>
-
-  </el-container>
-  <!-- <transition name="fade">
-    <router-view></router-view>
-  </transition> -->
+<div id="app">
+  <router-view>
+  </router-view>
+</div>
 </template>
 
-<script>
-import Header from './components/Header.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Header
-  }
-}
-</script>
-
 <style>
-
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
 </style>
