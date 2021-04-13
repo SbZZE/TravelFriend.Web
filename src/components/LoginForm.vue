@@ -32,6 +32,7 @@
 
 <script lang="ts">
 import { ref, getCurrentInstance } from "vue";
+import { useRouter } from "vue-router";
 export default {
   props: {
     loginUser: {
@@ -43,15 +44,41 @@ export default {
       required: true,
     },
   },
-  setup() {
+  setup(props: any) {
     // @ts-ignore
     const { ctx } = getCurrentInstance();
+    const router = useRouter();
+
 
     // 触发登录方法
     const handleLogin = (formName: string) => {
       ctx.$refs[formName].validate((valid: boolean) => {
         if (valid) {
-          alert("submit!");
+          //登录
+          ctx.$axios.post(ctx.$apiConfig.accountLogin.url,
+          props.loginUser
+          ).then((res: any) => {
+            console.log(res)
+            if(res.data.status === 200)
+            {
+              //登陆成功
+            ctx.$message({
+              message: "登陆成功",
+              type: "success",
+            });
+            //保存token
+            const { token } = res.data;
+            localStorage.setItem("msToken", token);
+            //路由跳转
+            router.push("/home");
+            }else {
+              //登陆失败
+              ctx.$message({
+                message: res.data.message,
+                type: "error",
+              })
+            }
+          });
         } else {
           console.log("error submit!!");
           return false;

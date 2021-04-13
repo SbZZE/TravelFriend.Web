@@ -40,7 +40,7 @@
 
 <script lang="ts">
 import { ref, getCurrentInstance } from "vue";
-// import axios from 'axios' // 仅限在当前组件使用
+import { useRouter } from "vue-router";
 export default {
   props: {
     registerUser: {
@@ -52,14 +52,36 @@ export default {
       required: true,
     },
   },
-  setup() {
+  setup(props: any) {
     // @ts-ignore
     const { ctx } = getCurrentInstance();
+    const router = useRouter();
 
     const handleRegister = (formName: string) => {
       ctx.$refs[formName].validate((valid: boolean) => {
         if (valid) {
-          alert("submit!");
+          console.log(ctx.$apiConfig.accountRegister)
+          ctx.$axios.post(ctx.$apiConfig.accountRegister.url,
+          props.registerUser
+          ).then((res: any) => {
+            console.log(res)
+            if(res.data.status === 200)
+            {
+              //注册成功
+            ctx.$message({
+              message: "注册成功",
+              type: "success",
+            });
+            //路由跳转
+            router.push("/home");
+            }else {
+              //注册失败
+              ctx.$message({
+                message: res.data.message,
+                type: "error",
+              })
+            }
+          });
         } else {
           console.log("error submit!!");
           return false;
