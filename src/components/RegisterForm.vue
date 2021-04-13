@@ -6,12 +6,6 @@
     label-width="100px"
     class="registerForm sign-up-form"
   >
-    <el-form-item label="用户名" prop="name">
-      <el-input
-        v-model="registerUser.name"
-        placeholder="输入用户名"
-      ></el-input>
-    </el-form-item>
     <el-form-item label="邮箱" prop="email">
       <el-input
         v-model="registerUser.email"
@@ -25,9 +19,9 @@
         placeholder="输入密码"
       ></el-input>
     </el-form-item>
-    <el-form-item label="确认密码" prop="password2">
+    <el-form-item label="确认密码" prop="confirmPassword">
       <el-input
-        v-model="registerUser.password2"
+        v-model="registerUser.confirmPassword"
         type="password"
         placeholder="再次输入密码"
       ></el-input>

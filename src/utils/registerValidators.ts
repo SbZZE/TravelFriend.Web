@@ -1,30 +1,18 @@
 import { ref } from "vue";
 
 interface RegisterUser {
-  name: string;
   email: string;
   password: string;
-  password2: string;
+  confirmPassword: string;
 }
 
 export const registerUser = ref<RegisterUser>({
-  name: "",
   email: "",
   password: "",
-  password2: "",
+  confirmPassword: "",
 });
 
 interface RegisterRules {
-  name: ({
-    message: string;
-    required: boolean;
-    trigger: string;
-  } | {
-    min: number;
-    max: number;
-    message: string;
-    trigger: string;
-  })[];
   email: {
     type: string;
     message: string;
@@ -41,7 +29,7 @@ interface RegisterRules {
     message: string;
     trigger: string;
   })[];
-  password2: ({
+  confirmPassword: ({
     required: boolean;
     message: string;
     trigger: string;
@@ -69,23 +57,10 @@ const validatePass2 = (rule: RegisterRules, value: string, callback: any) => {
 };
 
 export const registerRules = ref<RegisterRules>({
-  name: [
-    {
-      message: "用户名不能为空...",
-      required: true,
-      trigger: "blur",
-    },
-    {
-      min: 2,
-      max: 30,
-      message: "长度在2到30个字符",
-      trigger: "blur",
-    },
-  ],
   email: [
     {
       type: "email",
-      message: "Email is incorrect...",
+      message: "邮箱格式错误...",
       required: true,
       trigger: "blur",
     },
@@ -93,29 +68,28 @@ export const registerRules = ref<RegisterRules>({
   password: [
     {
       required: true,
-      message: "Password could not be empty...",
+      message: "密码不能为空...",
       trigger: "blur",
     },
     {
       min: 6,
       max: 30,
-      message: "Password's length has to be 6 to 30 characters...",
+      message: "密码长度必须6-30个字符...",
       trigger: "blur",
     },
   ],
-  password2: [
+  confirmPassword: [
     {
       required: true,
-      message: "Password2 could not be empty...",
+      message: "确认密码不能为空...",
       trigger: "blur",
     },
     {
       min: 6,
       max: 30,
-      message: "Password's length has to be 6 to 30 characters...",
+      message: "密码长度必须6-30个字符...",
       trigger: "blur",
     },
     { validator: validatePass2, trigger: "blur" },
   ]
-
 });

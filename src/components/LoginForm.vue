@@ -6,10 +6,10 @@
     label-width="100px"
     class="loginForm sign-in-form"
   >
-    <el-form-item label="账号" prop="account">
+    <el-form-item label="邮箱" prop="email">
       <el-input
-        v-model="loginUser.account"
-        placeholder="输入账号"
+        v-model="loginUser.email"
+        placeholder="输入邮箱"
       ></el-input>
     </el-form-item>
     <el-form-item label="密码" prop="password">
@@ -25,7 +25,7 @@
         @click="handleLogin('loginForm')"
         type="primary"
         class="submit-btn"
-        >登陆</el-button>
+        >登录</el-button>
     </el-form-item>
   </el-form>
 </template>
