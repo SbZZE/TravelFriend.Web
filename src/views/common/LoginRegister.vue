@@ -239,11 +239,13 @@ export default {
 
 .container.sign-up-mode form.sign-up-form {
   opacity: 1;
+  visibility: visible;
   z-index: 2;
 }
 
 .container.sign-up-mode form.sign-in-form {
   opacity: 0;
+  visibility: collapse;
   z-index: 1;
 }
 
@@ -402,6 +404,7 @@ form.sign-in-form {
 
 form.sign-up-form {
   opacity: 0;
+  visibility: collapse;
   z-index: 1;
 }
 
