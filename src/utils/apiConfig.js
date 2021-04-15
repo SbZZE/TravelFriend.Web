@@ -19,4 +19,9 @@ export default {
       method: 'POST',
       url: 'api/v1/user/info/update'
     },
+    // 获取用户头像
+    getUserAvatar: {
+      method: 'POST',
+      url: 'api/v1/user/avatar/get'
+    },
 }
