@@ -1,9 +1,6 @@
 <template>
-  <head>
-    <title>首页</title>
-  </head>
-  <body>
-    <!-- 导航栏 -->
+<div>
+<!-- 导航栏 -->
     <header>
       <div class="logo">TravelFriend</div>
       <nav>
@@ -13,22 +10,19 @@
         <a href="#">队伍</a>
       </nav>
     </header>
-
-    <!-- 侧边栏容器 -->
+<!-- 侧边栏容器 -->
     <div class="sidebar">
       <a href="#" class="image avatar"
         ><img
-          src="@/assets/img/avatar.jpg"
-          alt=""
+        src="@/assets/img/avatar.jpg" alt=""
       /></a>
       <h1><strong>I am TFriend</strong>, a super simple web<br /></h1>
     </div>
-    <!-- 主内容容器 -->
-    <div class="main">
-      
-      <!-- 动态/相册展示 -->
+
+<div class="main">
+    <!-- 动态/相册展示 -->
       <section>
-        <h2>最新动态</h2>
+        <h2>我的相册</h2>
         <!-- 展示容器 -->
         <div class="row">
           <article class="6u 12u$(xsmall) work-item">
@@ -47,16 +41,17 @@
           </article>
         </div>
       </section>
-    </div>
-  </body>
+  </div>
+</div>
 </template>
 
 <script>
 export default {
-  name: "Index",
+  name: "PersonalAlbum",
   components: {},
 };
 </script>
 
 <style scoped>
+
 </style>
