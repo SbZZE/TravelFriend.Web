@@ -26,6 +26,7 @@ const endLoading = () => {
 
 // 请求拦截
 axios.interceptors.request.use((config: AxiosRequestConfig) => {
+  config.headers.Authorization = "Bearer " + localStorage.getItem('msToken');
   // 加载
   startLoading();
   return config;
