@@ -19,6 +19,11 @@
     </div>
 
     <div class="main">
+      <div>
+        <el-row>
+          <el-button @click="createAlbumDialogVisible = true">新建相册</el-button>
+        </el-row>
+      </div>
       <!-- 动态/相册展示 -->
       <section>
         <el-row>
@@ -34,7 +39,7 @@
                 <span>好吃的汉堡</span>
                 <div class="bottom">
                   <time class="time">{{ currentDate }}</time>
-                  <el-button type="text" class="button">操作按钮</el-button>
+                  <el-button type="text" class="button">编辑</el-button>
                 </div>
               </div>
             </el-card>
@@ -52,7 +57,7 @@
                 <span>好吃的汉堡</span>
                 <div class="bottom">
                   <time class="time">{{ currentDate }}</time>
-                  <el-button type="text" class="button">操作按钮</el-button>
+                  <el-button type="text" class="button">编辑</el-button>
                 </div>
               </div>
             </el-card>
@@ -60,7 +65,31 @@
         </el-row>
       </section>
     </div>
-  </div>
+  
+  <!-- dialog组件 -->
+  <el-dialog title="新建相册" v-model="createAlbumDialogVisible">
+  <el-form :model="form" label-width="80px">
+    <el-form-item label="相册名称" :label-width="formLabelWidth">
+      <el-input v-model="form.name" autocomplete="off"></el-input>
+    </el-form-item>
+    <el-form-item label="相册简介" :label-width="formLabelWidth">
+      <el-input type="text" maxlength="30" v-model="form.name" autocomplete="off"></el-input>
+    </el-form-item>
+    <el-form-item label="是否公开" :label-width="formLabelWidth">
+      <el-select v-model="form.isOpen" placeholder="请选择">
+        <el-option label="是" value="1"></el-option>
+        <el-option label="否" value="0"></el-option>
+      </el-select>
+    </el-form-item>
+  </el-form>
+  <template #footer>
+    <span class="dialog-footer">
+      <el-button @click="createAlbumDialogVisible = false">取 消</el-button>
+      <el-button type="primary" @click="createAlbumDialogVisible = false">确 定</el-button>
+    </span>
+  </template>
+</el-dialog> 
+</div>
 </template>
 
 <script>
@@ -76,6 +105,8 @@ export default {
         "https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg",
       ],
       currentDate: new Date(),
+      createAlbumDialogVisible: false,
+      form: {},
     };
   },
 };
