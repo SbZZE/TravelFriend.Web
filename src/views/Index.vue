@@ -4,21 +4,10 @@
   </head>
   <body>
     <!-- 导航栏 -->
-    <header>
-      <div class="logo">TravelFriend</div>
-      <nav>
-        <router-link to="/home">首页</router-link>
-        <router-link to="/personal">个人中心</router-link>
-        <router-link to="/personal/album">个人相册</router-link>
-        <a href="#">队伍</a>
-      </nav>
-    </header>
+    <Navbar />
 
     <!-- 侧边栏容器 -->
-    <div class="sidebar">
-        <div class="block"><el-avatar :size="150" :src="url"></el-avatar></div>
-		<h1><strong>I am TFriend</strong>, a super simple web<br /></h1>
-    </div>
+    <Sidebar />
     <!-- 主内容容器 -->
     <div class="main">
       
@@ -49,24 +38,16 @@
 
 <script>
 import { ref, getCurrentInstance } from "vue";
-
+import Navbar from '@/components/Navbar';
+import Sidebar from '@/components/Sidebar.vue';
 export default {
     name: "Index",
-    components: {},
+    components: { Navbar, Sidebar },
     data(){
         return {
-            url:''
+            
         }
     },
-    beforeCreate() {
-        const { ctx } = getCurrentInstance();
-        //post参数要设置响应类型为blob，要在第三个参数设置！
-        ctx.$axios.post(ctx.$apiConfig.getUserAvatar.url,'',{responseType:'blob'})
-                  .then((res)=>{
-                      let blob = new Blob([res.data],{type:'image/png'})
-                      this.url = URL.createObjectURL(blob)
-                  })
-    }
 }
 </script>
 

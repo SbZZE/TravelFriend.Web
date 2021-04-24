@@ -6,17 +6,17 @@ const routes = [
     {
         path: '/',
         name: 'login',
-        component: () => import('../views/common/LoginRegister.vue')
+        component: () => import('../views/account/LoginRegister.vue')
     },
     {
         path: '/home',
         name: 'Index',
-        component: () => import('../views/common/Index.vue')
+        component: () => import('../views/Index.vue')
     },
     {
         path: '/:catchAll(.*)',
         name: '/404',
-        component: () => import('../views/common/404.vue')
+        component: () => import('../views/404.vue')
     },
     {
         path: '/personal',
