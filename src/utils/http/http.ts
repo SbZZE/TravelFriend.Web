@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { ElLoading } from 'element-plus';
 
-
+axios.defaults.baseURL = 'http://localhost:8080'
 let loading: any;
 
 const startLoading = () => {
