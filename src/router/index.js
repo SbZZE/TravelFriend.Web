@@ -21,12 +21,12 @@ const routes = [
     {
         path: '/personal',
         name: 'PersonalCenter',
-        component: () => import('../views/personal/PersonalCenter.vue'),
+        component: () => import('../views/personal/Center.vue'),
         children: [
             {
             path: 'album',
             name: 'PersonalAlbum',
-            component: () => import('../views/personal/PersonalAlbum.vue'),
+            component: () => import('../views/personal/Album.vue'),
             }
         ]
     },

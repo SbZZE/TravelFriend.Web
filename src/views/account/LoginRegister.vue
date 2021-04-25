@@ -38,8 +38,8 @@
 
 <script>
 import { ref, getCurrentInstance } from "vue";
-import { loginUser, rules } from "@/utils/loginValidators";
-import { registerUser, registerRules } from "@/utils/registerValidators";
+import { loginUser, rules } from "@/utils/validators/loginValidator";
+import { registerUser, registerRules } from "@/utils/validators/registerValidator";
 import LoginForm from '@/components/LoginForm';
 import RegisterForm from "@/components/RegisterForm.vue";
 

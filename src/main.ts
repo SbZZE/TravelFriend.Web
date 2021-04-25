@@ -4,8 +4,8 @@ import 'element-plus/lib/theme-chalk/index.css';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import axios from './utils/http'
-import apiConfig from './utils/apiConfig'
+import axios from './utils/http/http'
+import apiConfig from './utils/http/apiConfig'
 
 
 const app = createApp(App)
