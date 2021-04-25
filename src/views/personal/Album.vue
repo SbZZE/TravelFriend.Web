@@ -77,13 +77,4 @@ export default {
   padding: 0;
   min-height: auto;
 }
-
-.card-style {
-  margin-top: 10px;
-  height: 100%;
-}
-.row-con {
-  display: flex;
-  flex-flow: row wrap;
-}
 </style>
