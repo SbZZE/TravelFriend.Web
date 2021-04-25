@@ -9,6 +9,7 @@
         <a href="#">队伍</a>
       </nav>
     </header>
+    <el-divider></el-divider>
 </template>
 
 <script lang="ts">
