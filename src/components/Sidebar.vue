@@ -6,7 +6,7 @@
     </div>
 </template>
 
-<script lang="ts">
+<script>
 import { ref, getCurrentInstance } from "vue";
 export default {
     setup() {
@@ -18,7 +18,6 @@ export default {
         }
     },
     beforeCreate() {
-        //@ts-ignore
         const { ctx } = getCurrentInstance();
         //post参数要设置响应类型为blob，要在第三个参数设置！
         ctx.$axios.post(ctx.$apiConfig.getUserAvatar.url,'',{responseType:'blob'})
