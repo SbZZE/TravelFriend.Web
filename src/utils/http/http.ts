@@ -37,6 +37,9 @@ axios.interceptors.request.use((config: AxiosRequestConfig) => {
 axios.interceptors.response.use((response: AxiosResponse<any>) => {
   // 结束loading
   endLoading();
+  if (response.data.status == 603) {
+    window.location.href = "/"
+  }
   return response;
 }, error => {
   // 结束loading
