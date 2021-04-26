@@ -24,4 +24,14 @@ export default {
       method: 'POST',
       url: 'api/v1/user/avatar/get'
     },
+    // 获取用户所有相册
+    getUserAlbums: {
+      method: 'POST',
+      url: 'api/v1/user/album/albums'
+    },
+    // 获取缩略图
+    getThumbnail: {
+      method: 'POST',
+      url: 'api/v1/user/album/thumbnail/get'
+    },
 }
