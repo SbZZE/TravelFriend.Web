@@ -1,16 +1,18 @@
 <template>
 <!-- 侧边栏容器 -->
-    <div class="sidebar">
-        <div class="block"><el-avatar :size="150" :src="url"></el-avatar></div>
-		<h1><strong>I am TFriend</strong>, a super simple web<br /></h1>
+<div class="sidebar">
+    <div class="block">
+        <el-avatar :size="150" :src="url"></el-avatar>
     </div>
+    <h1><strong>I am TFriend</strong>, a super simple web<br /></h1>
+</div>
 </template>
 
 <script>
 import { ref, getCurrentInstance } from "vue";
 export default {
     setup() {
-        
+
     },
     data(){
         return {

@@ -1,41 +1,18 @@
 <template>
-  <el-form
-    ref="registerForm"
-    :model="registerUser"
-    :rules="registerRules"
-    label-width="100px"
-    class="registerForm sign-up-form"
-  >
+<el-form ref="registerForm" :model="registerUser" :rules="registerRules" label-width="100px" class="registerForm sign-up-form">
     <el-form-item label="邮箱" prop="email">
-      <el-input
-        v-model="registerUser.email"
-        placeholder="输入邮箱"
-      ></el-input>
+        <el-input v-model="registerUser.email" placeholder="输入邮箱"></el-input>
     </el-form-item>
     <el-form-item label="密码" prop="password">
-      <el-input
-        v-model="registerUser.password"
-        type="password"
-        placeholder="输入密码"
-      ></el-input>
+        <el-input v-model="registerUser.password" type="password" placeholder="输入密码"></el-input>
     </el-form-item>
     <el-form-item label="确认密码" prop="confirmPassword">
-      <el-input
-        v-model="registerUser.confirmPassword"
-        type="password"
-        placeholder="再次输入密码"
-      ></el-input>
+        <el-input v-model="registerUser.confirmPassword" type="password" placeholder="再次输入密码"></el-input>
     </el-form-item>
-
     <el-form-item>
-      <el-button
-        @click="handleRegister('registerForm')"
-        type="primary"
-        class="submit-btn"
-        >注册</el-button
-      >
+        <el-button @click="handleRegister('registerForm')" type="primary" class="submit-btn">注册</el-button>
     </el-form-item>
-  </el-form>
+</el-form>
 </template>
 
 <script lang="ts">
@@ -93,17 +70,18 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 /* register */
 .registerForm {
-  margin-top: 20px;
-  background-color: #fff;
-  padding: 20px 40px 20px 20px;
-  border-radius: 5px;
-  box-shadow: 0px 5px 10px #cccc;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px 40px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px #cccc;
 }
 
 .submit-btn {
-  width: 100%;
+    width: 100%;
 }
 </style>

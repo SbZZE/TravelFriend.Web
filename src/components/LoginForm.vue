@@ -1,33 +1,16 @@
 <template>
-  <el-form
-    ref="loginForm"
-    :model="loginUser"
-    :rules="rules"
-    label-width="100px"
-    class="loginForm sign-in-form"
-  >
+<el-form ref="loginForm" :model="loginUser" :rules="rules" label-width="100px" class="loginForm sign-in-form">
     <el-form-item label="邮箱" prop="email">
-      <el-input
-        v-model="loginUser.email"
-        placeholder="输入邮箱"
-      ></el-input>
+        <el-input v-model="loginUser.email" placeholder="输入邮箱"></el-input>
     </el-form-item>
     <el-form-item label="密码" prop="password">
-      <el-input
-        v-model="loginUser.password"
-        type="password"
-        placeholder="输入密码"
-      ></el-input>
+        <el-input v-model="loginUser.password" type="password" placeholder="输入密码"></el-input>
     </el-form-item>
 
     <el-form-item>
-      <el-button
-        @click="handleLogin('loginForm')"
-        type="primary"
-        class="submit-btn"
-        >登录</el-button>
+        <el-button @click="handleLogin('loginForm')" type="primary" class="submit-btn">登录</el-button>
     </el-form-item>
-  </el-form>
+</el-form>
 </template>
 
 <script lang="ts">
@@ -48,7 +31,6 @@ export default {
     // @ts-ignore
     const { ctx } = getCurrentInstance();
     const router = useRouter();
-
 
     // 触发登录方法
     const handleLogin = (formName: string) => {
@@ -90,25 +72,28 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 /* form */
 .loginForm {
-  margin-top: 20px;
-  background-color: #fff;
-  padding: 20px 40px 20px 20px;
-  border-radius: 5px;
-  box-shadow: 0px 5px 10px #cccc;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px 40px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px #cccc;
 }
 
 .submit-btn {
-  width: 100%;
+    width: 100%;
 }
+
 .tiparea {
-  text-align: right;
-  font-size: 12px;
-  color: #333;
+    text-align: right;
+    font-size: 12px;
+    color: #333;
 }
+
 .tiparea p a {
-  color: #409eff;
+    color: #409eff;
 }
 </style>
